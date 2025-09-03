@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Management</title>
-</head>
     <link rel="stylesheet" href="{{ url_for('static', filename='management_design.css') }}">
 <body>
+</head>
+    
     <h2 class="section-title">Current ball dues:</h2>
     
     {% if names %}
@@ -16,6 +17,7 @@
                 <th>Name</th>
                 <th>Balls due</th>
                 <th>Total amount</th>
+                <th>Time added</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -25,6 +27,7 @@
                 <td class="name-cell">{{ names[i] }}</td>
                 <td><span class="balls-count">{{ balls[i] }}</span></td>
                 <td class="amount">RS.{{ amounts[i] }}</td>
+                <td class="time">{{ times[i] }}</td>
                 <td>
                     <form method="post" style="display:inline;">
                         <input type="hidden" name="name" value="{{ names[i] }}">

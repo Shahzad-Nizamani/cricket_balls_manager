@@ -15,7 +15,7 @@
 
         <div class="content">
 
-        <form method="post">
+        <form class="add-due" method="post">
             <button type="submit">
                 <p>add or update dues</p>
             </button>
@@ -29,14 +29,16 @@
                         <th>Name</th>
                         <th>Balls due</th>
                         <th>Total amount</th>
+                        <th>Time added</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for i in range(names|length) %}
                     <tr>
-                        <td class="name-cell">{{ names[i] }}</td>
+                        <td class="name-cell">{{ names[i] }}</t>
                         <td><span class="balls-count">{{ balls[i] }}</span></td>
                         <td class="amount">RS.{{ amounts[i] }}</td>
+                        <td class="time">{{ times[i] }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

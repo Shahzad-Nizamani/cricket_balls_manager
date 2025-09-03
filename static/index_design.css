@@ -57,6 +57,31 @@ body {
     color: #ecf0f1;
 }
 
+.add-due button {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.add-due button:hover {
+    background: linear-gradient(135deg, #2980b9, #1f6391);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.add-due button:active {
+    transform: scale(0.95);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+
 .content {
     padding: 50px 40px;
     text-align: center;
@@ -150,6 +175,10 @@ tr:hover {
 .name-cell {
     font-weight: 600;
     color: #2c3e50;
+}
+.time {
+    font-weight: 600;
+    color: #000912;
 }
 
 /* No Dues Message */
