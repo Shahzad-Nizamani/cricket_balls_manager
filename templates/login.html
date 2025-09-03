@@ -4,11 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login_design.css') }}">
 </head>
+
 <body>
     <form method="post">
         <label for="subject">ENTER KEY</label>
         <input type="text" id="key" name="key" required>
+        <button type="submit">ENTER</button>
+
+    {% if wrong %}
+       <h3 class="wrong">{{wrong}}</h3>
+    {% endif %}
     </form>
 </body>
 </html>

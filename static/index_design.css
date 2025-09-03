@@ -13,12 +13,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #2c3e50;
 }
 
 /* Main Container & Layout */
 .container {
     max-width: 900px;
-    margin: 0 auto;
+    width: 100%; /* Make it fluid for responsiveness */
     background: rgba(255, 255, 255, 0.95);
     border-radius: 20px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
@@ -82,9 +83,16 @@ body {
     border-radius: 2px;
 }
 
+/* Added a class to the container for responsive table handling */
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 20px;
+}
+
 table {
     width: 100%;
-    max-width: 700px;
+    max-width: none; /* Removed fixed max-width for responsiveness */
     margin: 0 auto;
     border-collapse: collapse;
     background: white;
@@ -92,6 +100,7 @@ table {
     overflow: hidden;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     text-align: left;
+    min-width: 500px; /* Ensures columns don't get too narrow */
 }
 
 th {
@@ -153,11 +162,14 @@ tr:hover {
     background: linear-gradient(135deg, #d5f4e6 0%, #feffff 100%);
     border-radius: 12px;
     border: 2px solid #27ae60;
+    margin-top: 20px; /* Add margin to separate from the button */
 }
 
+/* Corrected .no-dues h2 style */
 .no-dues h2 {
     margin-bottom: 0;
     font-size: 1.5rem;
+    color: #27ae60;
 }
 
 .no-dues::before {
@@ -167,10 +179,10 @@ tr:hover {
     content: '✅';
 }
 
-/* Media Queries for Responsiveness */
+/* Responsive Styles for Mobile */
 @media (max-width: 768px) {
     .container {
-        margin: 10px;
+        padding: 20px 15px;
         border-radius: 15px;
     }
 
@@ -179,9 +191,13 @@ tr:hover {
     }
 
     .header h1:first-child {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
+    .header h1:last-child {
+        font-size: 1.2rem;
+    }
+    
     .content {
         padding: 30px 20px;
     }
@@ -191,12 +207,9 @@ tr:hover {
         margin-bottom: 25px;
     }
 
-    table {
-        font-size: 0.9rem;
-    }
-
     th, td {
         padding: 12px 10px;
+        font-size: 0.9rem;
     }
 
     .balls-count {

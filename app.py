@@ -29,6 +29,9 @@ def login():
     if request.method == "POST":
         if request.form.get("key") == "uzaircheater":
           return redirect(url_for("management"))
+        else:
+            wrong = "WRONG KEY!"
+            return render_template("login.html", wrong=wrong)
         
     return render_template("login.html")
 
