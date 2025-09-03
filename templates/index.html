@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balls Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index_design.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Welcome to Balls Management System (BMS)</h1>
+            <h1>of School Cricket Ground (SCG)</h1>
+        </div>
+
+        <div class="content">
+
+        <form method="post">
+            <button type="submit">
+                <p>add or update dues</p>
+            </button>
+        </form>
+
+            {% if names %}
+            <h2 class="section-title">Current ball dues:</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Balls due</th>
+                        <th>Total amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in range(names|length) %}
+                    <tr>
+                        <td class="name-cell">{{ names[i] }}</td>
+                        <td><span class="balls-count">{{ balls[i] }}</span></td>
+                        <td class="amount">RS.{{ amounts[i] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <div class="no-dues">
+                <h2>No balls due currently!</h2>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

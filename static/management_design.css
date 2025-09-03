@@ -1,0 +1,289 @@
+/* Universal and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #2c3e50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+}
+
+/* Headings and Titles */
+h1, h2 {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    font-size: 1.5rem;
+    color: #34495e;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    text-align: center;
+}
+
+.section-title::after {
+    content: '';
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* No Dues Message */
+.no-dues {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #27ae60;
+    font-weight: 600;
+    padding: 40px;
+    background: linear-gradient(135deg, #d5f4e6 0%, #feffff 100%);
+    border-radius: 12px;
+    border: 2px solid #27ae60;
+    margin-bottom: 40px;
+}
+
+.no-dues h2 {
+    margin-bottom: 0;
+    font-size: 1.5rem;
+}
+
+.no-dues::before {
+    content: '✅';
+    display: block;
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+/* Responsive Table Styles */
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 40px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    min-width: 600px;
+}
+
+th {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    font-weight: 600;
+    padding: 18px 20px;
+    text-align: left;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+td {
+    padding: 16px 20px;
+    border-bottom: 1px solid #ecf0f1;
+    font-size: 1rem;
+    color: #2c3e50;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover {
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+/* Specific Cell Styles */
+.name-cell {
+    font-weight: 600;
+}
+
+.balls-count {
+    background: #3498db;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.amount {
+    font-weight: 600;
+    color: #e74c3c;
+    font-size: 1.1rem;
+}
+
+/* Forms and Buttons */
+form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+form h2 {
+    font-size: 1.2rem;
+    color: #34495e;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 8px;
+    display: block;
+}
+
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+button {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 100%;
+    margin-top: 10px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(46, 204, 113, 0.3);
+}
+
+/* Actions Buttons in Table Cells */
+td form {
+    background: none;
+    padding: 0;
+    box-shadow: none;
+    margin-bottom: 0;
+    display: inline;
+}
+
+td form button {
+    background: linear-gradient(135deg, #e67e22, #d35400);
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    width: auto;
+    margin: 0 5px;
+}
+
+td form button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(230, 126, 34, 0.3);
+}
+
+td form:last-child button {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+td form:last-child button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(231, 76, 60, 0.3);
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 20px 15px;
+        border-radius: 10px;
+    }
+
+    .section-title {
+        font-size: 1.2rem;
+    }
+
+    th, td {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+
+    .balls-count {
+        padding: 3px 8px;
+        font-size: 0.85rem;
+    }
+
+    input[type="text"], input[type="number"] {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    td form button {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Stack action buttons vertically on very small screens */
+    td form {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    td form button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}

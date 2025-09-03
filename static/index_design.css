@@ -1,0 +1,206 @@
+/* Universal Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main Container & Layout */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+.header {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+}
+
+.header::before {
+    content: '🏏';
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+}
+
+.header h1:first-child {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.header h1:last-child {
+    font-size: 1.5rem;
+    font-weight: 400;
+    opacity: 0.9;
+    color: #ecf0f1;
+}
+
+.content {
+    padding: 50px 40px;
+    text-align: center;
+}
+
+/* Section Title & Table Styles */
+.section-title {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+table {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+th {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    font-weight: 600;
+    padding: 18px 20px;
+    text-align: left;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+td {
+    padding: 16px 20px;
+    border-bottom: 1px solid #ecf0f1;
+    font-size: 1rem;
+    color: #2c3e50;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-1px);
+    transition: all 0.3s ease;
+}
+
+/* Specific Cell Styles */
+.amount {
+    font-weight: 600;
+    color: #e74c3c;
+    font-size: 1.1rem;
+}
+
+.balls-count {
+    background: #3498db;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.name-cell {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+/* No Dues Message */
+.no-dues {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #27ae60;
+    font-weight: 600;
+    padding: 40px;
+    background: linear-gradient(135deg, #d5f4e6 0%, #feffff 100%);
+    border-radius: 12px;
+    border: 2px solid #27ae60;
+}
+
+.no-dues h2 {
+    margin-bottom: 0;
+    font-size: 1.5rem;
+}
+
+.no-dues::before {
+    display: block;
+    font-size: 3rem;
+    margin-bottom: 15px;
+    content: '✅';
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        border-radius: 15px;
+    }
+
+    .header {
+        padding: 30px 20px;
+    }
+
+    .header h1:first-child {
+        font-size: 2rem;
+    }
+
+    .content {
+        padding: 30px 20px;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+        margin-bottom: 25px;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    th, td {
+        padding: 12px 10px;
+    }
+
+    .balls-count {
+        padding: 3px 8px;
+        font-size: 0.85rem;
+    }
+}
