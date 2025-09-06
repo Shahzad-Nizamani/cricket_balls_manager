@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Management</title>
+    <title>Balls Management System</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='management_design.css') }}">
 <body>
 </head>
@@ -29,12 +29,16 @@
                 <td class="amount">RS.{{ amounts[i] }}</td>
                 <td class="time">{{ times[i] }}</td>
                 <td>
+
                     <form method="post" style="display:inline;">
+                        <input type="hidden" name="action" value="update">
                         <input type="hidden" name="name" value="{{ names[i] }}">
                         <input type="number" name="balls" value="{{ balls[i] }}" required style="width: 60px;">
                         <button type="submit">Update</button>
                     </form>
+
                     <form method="post" style="display:inline;">
+                        <input type="hidden" name="action" value="delete">
                         <input type="hidden" name="name" value="{{ names[i] }}">
                         <button type="submit">Delete</button>
                     </form>
@@ -50,9 +54,14 @@
     <form method="post">
         <h2>Add New Due</h2>
         <label for="name">Name:</label>
+        <input type="hidden" name="action" value="add">
         <input type="text" id="name" name="new_name" required><br><br>
+
         <label for="balls">Balls:</label>
         <input type="number" id="balls" name="new_balls" required><br><br>
+
+        <label for="desc">Description:</label>
+        <input type="text" id="desc" name="new_desc" required><br><br>
         <button type="submit">Add</button>
     </form>
 </body>

@@ -29,6 +29,7 @@
                         <th>Name</th>
                         <th>Balls due</th>
                         <th>Total amount</th>
+                        <th>Description</th>
                         <th>Time added</th>
                     </tr>
                 </thead>
@@ -38,6 +39,7 @@
                         <td class="name-cell">{{ names[i] }}</t>
                         <td><span class="balls-count">{{ balls[i] }}</span></td>
                         <td class="amount">RS.{{ amounts[i] }}</td>
+                        <td class="desc">{{ desc[i] }}</td>
                         <td class="time">{{ times[i] }}</td>
                     </tr>
                     {% endfor %}
