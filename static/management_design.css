@@ -203,36 +203,60 @@ button:hover {
 }
 
 /* Actions Buttons in Table Cells */
-td form {
+/* Actions Buttons in Table Cells */
+td .actions-cell {
+    display: flex;
+    flex-direction: column; /* Stack forms vertically by default */
+    gap: 10px; /* Adds spacing between the forms/buttons */
+}
+
+td .actions-cell form {
     background: none;
     padding: 0;
     box-shadow: none;
-    margin-bottom: 0;
-    display: inline;
+    margin: 0;
+    width: 100%; /* Make each form take full width */
+    display: flex;
+    flex-direction: column; /* Stack input and button vertically */
+    gap: 5px; /* Adds spacing between input and button */
 }
 
-td form button {
+td .actions-cell input[type="number"] {
+    width: 100% !important; /* Ensure input takes full width */
+    text-align: center; /* Center the number */
+}
+
+td .actions-cell button {
     background: linear-gradient(135deg, #e67e22, #d35400);
     padding: 8px 15px;
     font-size: 0.9rem;
     border-radius: 20px;
-    width: auto;
-    margin: 0 5px;
+    width: 100%; /* Make buttons full width */
+    margin: 0;
 }
 
-td form button:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 5px rgba(230, 126, 34, 0.3);
-}
-
-td form:last-child button {
+td .actions-cell form:last-child button {
     background: linear-gradient(135deg, #e74c3c, #c0392b);
 }
 
-td form:last-child button:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 5px rgba(231, 76, 60, 0.3);
+/* Your media queries */
+@media (max-width: 768px) {
+    /* ... existing media query styles ... */
+    
+    /* Remove the old mobile button styles */
+    td form {
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+
+    td form button {
+        width: auto;
+        margin: 5px 0;
+    }
+    
+    /* The new `actions-cell` styles already handle this */
 }
+
 
 /* Media Queries for Mobile Responsiveness */
 @media (max-width: 768px) {
@@ -269,21 +293,20 @@ td form:last-child button:hover {
         font-size: 0.9rem;
     }
 
-    td form button {
-        padding: 6px 10px;
-        font-size: 0.8rem;
-    }
-}
-
-@media (max-width: 600px) {
-    /* Stack action buttons vertically on very small screens */
+    /* Remove previous mobile-specific button styles */
     td form {
-        display: block;
+        display: inline-block;
         margin-bottom: 5px;
     }
 
     td form button {
-        width: 100%;
+        width: auto;
         margin: 5px 0;
+    }
+
+    /* New, simplified mobile button styles for clarity */
+    td .actions-cell {
+        flex-direction: column;
+        gap: 8px;
     }
 }
