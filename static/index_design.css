@@ -57,6 +57,10 @@ body {
     color: #ecf0f1;
 }
 
+.add-due {
+    padding-top: 20px; /* Added padding to separate from header text */
+}
+
 .add-due button {
     background: linear-gradient(135deg, #3498db, #2980b9);
     color: white;
@@ -68,6 +72,7 @@ body {
     cursor: pointer;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
+    width: auto; /* Ensure button doesn't stretch */
 }
 
 .add-due button:hover {
@@ -117,7 +122,6 @@ body {
 
 table {
     width: 100%;
-    max-width: none; /* Removed fixed max-width for responsiveness */
     margin: 0 auto;
     border-collapse: collapse;
     background: white;
@@ -236,6 +240,17 @@ tr:hover {
         margin-bottom: 25px;
     }
 
+    /* Fixed table styling for better mobile display */
+    .table-responsive {
+        width: 100%; /* Ensure it takes full width of parent */
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+        min-width: 500px; /* Keep minimum width to prevent squishing */
+    }
+
     th, td {
         padding: 12px 10px;
         font-size: 0.9rem;
@@ -244,5 +259,16 @@ tr:hover {
     .balls-count {
         padding: 3px 8px;
         font-size: 0.85rem;
+    }
+
+    /* Adjusting the add-due button for mobile */
+    .add-due {
+        display: flex;
+        justify-content: center;
+    }
+
+    .add-due button {
+        width: 100%;
+        max-width: 250px; /* Prevent it from being too wide */
     }
 }
