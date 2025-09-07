@@ -36,7 +36,7 @@ def first():
 def login():
 
     if request.method == "POST":
-        if request.form.get("key") == "uzaircheater":
+        if request.form.get("key") == "Cheateruzair1133":
           session["auth"] = True
           return redirect(url_for("management"))
         else:
