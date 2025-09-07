@@ -1,9 +1,9 @@
-from flask import Flask, render_template, request, url_for, redirect
+from flask import Flask, render_template, request, url_for, redirect, session
 import json
 from datetime import datetime
 
 app = Flask(__name__)
-
+app.secret_key = "yoursecretkey"
 @app.route("/", methods = ["GET", "POST"])
 def first():
 
@@ -34,8 +34,10 @@ def first():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+
     if request.method == "POST":
         if request.form.get("key") == "uzaircheater":
+          session["auth"] = True
           return redirect(url_for("management"))
         else:
             wrong = "WRONG KEY!"
@@ -45,6 +47,10 @@ def login():
 
 @app.route("/management", methods=["GET", "POST"])
 def management():
+
+    if not session.get("auth"):
+        invalid = "You must enter key first."
+        return redirect(url_for("first", invalid=invalid))
 
     with open("balls.json", 'r') as f:
         dic = json.load(f)

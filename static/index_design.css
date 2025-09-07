@@ -35,12 +35,12 @@ body {
     position: relative;
 }
 
-.header::before {
+.header h1:last-child::after {
     content: '🏏';
-    position: absolute;
-    top: 20px;
-    right: 30px;
     font-size: 2rem;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
 }
 
 .header h1:first-child {
@@ -57,8 +57,10 @@ body {
     color: #ecf0f1;
 }
 
+/* Moved add-due styles to be positioned below table */
 .add-due {
-    padding-top: 20px; /* Added padding to separate from header text */
+    padding: 30px 0 20px 0; /* Added padding for spacing */
+    text-align: center;
 }
 
 .add-due button {
@@ -86,9 +88,8 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-
 .content {
-    padding: 50px 40px;
+    padding: 50px 40px 30px 40px; /* Reduced bottom padding since button is now below */
     text-align: center;
 }
 
@@ -195,7 +196,7 @@ tr:hover {
     background: linear-gradient(135deg, #d5f4e6 0%, #feffff 100%);
     border-radius: 12px;
     border: 2px solid #27ae60;
-    margin-top: 20px; /* Add margin to separate from the button */
+    margin-bottom: 20px; /* Changed from margin-top to margin-bottom for button spacing */
 }
 
 /* Corrected .no-dues h2 style */
@@ -232,7 +233,7 @@ tr:hover {
     }
     
     .content {
-        padding: 30px 20px;
+        padding: 30px 20px 20px 20px; /* Reduced bottom padding for mobile too */
     }
 
     .section-title {
@@ -265,10 +266,19 @@ tr:hover {
     .add-due {
         display: flex;
         justify-content: center;
+        padding: 20px 0;
     }
 
     .add-due button {
         width: 100%;
         max-width: 250px; /* Prevent it from being too wide */
     }
+}
+
+.header h1:last-child::after {
+    content: '🏏';
+    font-size: 2rem;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
 }

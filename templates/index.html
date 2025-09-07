@@ -14,44 +14,52 @@
         </div>
 
         <div class="content">
-    <form class="add-due" method="post">
-        <button type="submit">
-            <p>add or update dues</p>
-        </button>
-    </form>
-
-    {% if names %}
-    <h2 class="section-title">Current ball dues:</h2>
-    <div class="table-responsive">
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Balls due</th>
-                    <th>Total amount</th>
-                    <th>Description</th>
-                    <th>Time added</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for i in range(names|length) %}
-                <tr>
-                    <td class="name-cell">{{ names[i] }}</t>
-                    <td><span class="balls-count">{{ balls[i] }}</span></td>
-                    <td class="amount">RS.{{ amounts[i] }}</td>
-                    <td class="desc">{{ desc[i] }}</td>
-                    <td class="time">{{ times[i] }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-    {% else %}
-    <div class="no-dues">
-        <h2>No balls due currently!</h2>
-    </div>
-    {% endif %}
-</div>
+            {% if names %}
+            <h2 class="section-title">Current ball dues:</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Balls due</th>
+                            <th>Total amount</th>
+                            <th>Description</th>
+                            <th>Time added</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in range(names|length) %}
+                        <tr>
+                            <td class="name-cell">{{ names[i] }}</td>
+                            <td><span class="balls-count">{{ balls[i] }}</span></td>
+                            <td class="amount">RS.{{ amounts[i] }}</td>
+                            <td class="desc">{{ desc[i] }}</td>
+                            <td class="time">{{ times[i] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Button moved below the table -->
+            <form class="add-due" method="post">
+                <button type="submit">
+                    <p>add or update dues</p>
+                </button>
+            </form>
+            
+            {% else %}
+            <div class="no-dues">
+                <h2>No balls due currently!</h2>
+            </div>
+            
+            <!-- Button also appears when no dues -->
+            <form class="add-due" method="post">
+                <button type="submit">
+                    <p>add or update dues</p>
+                </button>
+            </form>
+            {% endif %}
         </div>
     </div>
 </body>
